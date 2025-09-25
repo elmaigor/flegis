@@ -1,34 +1,74 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Asistencia Penitenciaria · Fundación Legis</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"><link rel="stylesheet" href="css/style.css"></head><body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asistencia Penitenciaria · Fundación Legis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html"><img src="img/logo.jpg" alt="Fundación Legis"></a>
     <nav>
       <ul id="main-menu">
-        <li><a href="index.html" >Inicio</a></li>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="que-hacemos.html" class="active">Qué hacemos</a></li>
-        <li><a href="quienes-somos.html" >Quiénes somos</a></li>
-        <li><a href="colabora.html" class="btn-colabora" >Colabora</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="colabora.html" class="btn-colabora">Colabora</a></li>
       </ul>
     </nav>
     <div class="lang-switch">
+      <a href="penitentiary-assistance.html">EN</a>
       <a href="#" class="active">ES</a>
-      <a href="index-en.html" >EN</a>
     </div>
     <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
   </div>
 </header>
+
 <main>
-  <section class="section"><h2>Asistencia Penitenciaria</h2><p>Trabajamos por la dignidad, la reinserción y el apoyo integral a personas privadas de libertad y a sus familias.</p><p class="lead"><a href="proteccion-infancia.html">Ir a Protección de la Infancia →</a></p></section>
-  <section class="section"><h2>Proyectos</h2>
+  <section class="section">
+    <h2>Asistencia Penitenciaria</h2>
+    <p>Trabajamos por la dignidad, la reinserción y el apoyo integral a personas privadas de libertad y a sus familias.</p>
+    <p class="lead"><a href="proteccion-infancia.html">Ir a Protección de la Infancia →</a></p>
+  </section>
+
+  <section class="section">
+    <h2>Proyectos</h2>
     <div class="grid-3">
-      <article class="card"><img src="img/asesoramientogratuito.png" alt=""><div class="card-body"><h3>Asesoramiento gratuito</h3><p>Orientación legal sin coste para personas reclusas y excarceladas.</p><a class="btn btn-white" href="colabora.html">Conoce más</a></div></article>
-      <article class="card"><img src="img/asistenciaprisiones.png" alt=""><div class="card-body"><h3>Asistencia en prisiones</h3><p>Acompañamiento, talleres y formación dentro de centros penitenciarios.</p><a class="btn btn-white" href="colabora.html">Conoce más</a></div></article>
-      <article class="card"><img src="img/asistenciafamilias.png" alt=""><div class="card-body"><h3>Asistencia a familias</h3><p>Apoyo emocional y recursos para familias afectadas por el encarcelamiento.</p><a class="btn btn-white" href="colabora.html">Conoce más</a></div></article>
+      <article class="card">
+        <img src="img/asesoramientogratuito.png" alt="Asesoramiento gratuito">
+        <div class="card-body">
+          <h3>Asesoramiento gratuito</h3>
+          <p>Orientación legal sin coste para personas reclusas y excarceladas.</p>
+          <a class="btn btn-white" href="colabora.html">Conoce más</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="img/asistenciaprisiones.png" alt="Asistencia en prisiones">
+        <div class="card-body">
+          <h3>Asistencia en prisiones</h3>
+          <p>Acompañamiento, talleres y formación dentro de centros penitenciarios.</p>
+          <a class="btn btn-white" href="colabora.html">Conoce más</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="img/asistenciafamilias.png" alt="Asistencia a familias">
+        <div class="card-body">
+          <h3>Asistencia a familias</h3>
+          <p>Apoyo emocional y recursos para familias afectadas por el encarcelamiento.</p>
+          <a class="btn btn-white" href="colabora.html">Conoce más</a>
+        </div>
+      </article>
     </div>
   </section>
-  <section class="section"><h2>Solicitar ayuda</h2>
+
+  <section class="section">
+    <h2>Solicitar ayuda</h2>
+    <!-- FORM bonito y centrado -->
     <form class="form" action="mailto:info@fundacionlegis.org?subject=Solicitud%20de%20ayuda" method="post" enctype="text/plain">
       <select class="select" name="proyecto" required>
         <option value="" disabled selected>Selecciona el proyecto</option>
@@ -42,16 +82,68 @@
       <button class="submit" type="submit">Enviar</button>
     </form>
   </section>
-  <section class="section"><h2>Voces que inspiran</h2>
-    <div class="mosaic"><div class="box">Vídeo</div><div class="box">Imagen</div><div class="box">Imagen</div></div>
+
+  <section class="section">
+    <h2>Nuestra labor en imágenes</h2>
+    <!-- MOSAICO de fotos/vídeos -->
+    <div class="mosaic">
+      <figure class="media-card video"><div class="media-inner">Vídeo</div></figure>
+      <figure class="media-card photo"><img src="img/asistenciapenitenciaria.png" alt="Proyecto penitenciario"></figure>
+      <figure class="media-card photo"><img src="img/asistenciafamilias.png" alt="Apoyo a familias"></figure>
+      <figure class="media-card photo"><img src="img/asistenciaprisiones.png" alt="Actividades en prisión"></figure>
+      <figure class="media-card photo"><img src="img/asesoramientogratuito.png" alt="Asesoramiento legal"></figure>
+      <figure class="media-card video"><div class="media-inner">Vídeo</div></figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Voces que inspiran</h2>
+    <!-- TESTIMONIOS en grid -->
+    <div class="stories">
+      <article class="story">
+        <blockquote>
+          “Gracias a Flegis, pude terminar mi formación profesional dentro de la prisión. Ahora tengo la oportunidad de reinsertarme de forma digna.”
+        </blockquote>
+        <p class="author">Juan · Beneficiario</p>
+      </article>
+      <article class="story">
+        <blockquote>
+          “Los talleres de reinserción me dieron esperanza para reconstruir mi vida. El apoyo emocional fue clave para mi cambio.”
+        </blockquote>
+        <p class="author">Marcos · Ex-interno</p>
+      </article>
+      <article class="story">
+        <blockquote>
+          “El acompañamiento a mi familia marcó la diferencia. Sentimos que no estábamos solos.”
+        </blockquote>
+        <p class="author">Familia de beneficiario</p>
+      </article>
+    </div>
   </section>
 </main>
 
 <footer>
   <div class="footer-inner">
-    <p>© 2025 Fundación Legis · <a href="aviso-legal.html">Aviso legal</a> · 
-    <a href="politica-cookies.html">Cookies</a> · 
-    <a href="privacidad.html">Privacidad</a> · 
-    <a href="transparencia.html">Transparencia</a></p>
+    <p>© 2025 Fundación Legis ·
+      <a href="aviso-legal.html">Aviso legal</a> ·
+      <a href="politica-cookies.html">Cookies</a> ·
+      <a href="privacidad.html">Privacidad</a> ·
+      <a href="transparencia.html">Transparencia</a>
+    </p>
   </div>
-</footer><script src="js/main.js"></script></body></html>
+</footer>
+
+<script>
+(function(){
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('main-menu');
+  if(toggle && menu){
+    toggle.addEventListener('click', ()=>{
+      menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true':'false');
+    });
+  }
+})();
+</script>
+</body>
+</html>
