@@ -244,3 +244,44 @@ footer{background:#fafafa;border-top:1px solid #eee;margin-top:40px}
   background:var(--cereza);
   color:#fff;
 }
+/* Mejora de legibilidad del link rosa en la portada */
+.btn-link-cereza{
+  color: var(--cereza);
+  font-weight: 800;                  /* más presencia */
+  text-decoration: none;
+  text-underline-offset: 4px;
+  /* sutil realce para arena clara */
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.55),   /* halo claro muy leve */
+    0 0 8px rgba(0,0,0,.18);         /* contraluz suave */
+  border-bottom: 2px solid rgba(224,60,88,.35); /* línea base elegante */
+  padding-bottom: 2px;
+}
+.btn-link-cereza:hover{
+  text-decoration: underline;
+}
+
+/* En móviles, micro-fondo translúcido + blur para que se lea siempre,
+   manteniendo apariencia de enlace (no botón sólido) */
+@media (max-width: 575px){
+  .btn-link-cereza{
+    background: rgba(255,255,255,.22);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,.65),
+      0 0 10px rgba(0,0,0,.20);
+    border-bottom-width: 1px; /* afinamos la línea para que no “pese” */
+  }
+}
+
+/* Refuerzo del fondo degradado del bloque de eslogan en móvil
+   (apenas más marcado para mejorar contraste general) */
+@media (max-width: 575px){
+  .hero-slogan{
+    background: linear-gradient(90deg, rgba(0,0,0,.34), rgba(0,0,0,0));
+  }
+}
