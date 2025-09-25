@@ -1,7 +1,6 @@
-
 :root{
-  --cereza:#e03c58; /* botón link y acentos */
-  --verde:#a2c301;  /* botón Colabora */
+  --cereza:#e03c58; /* acentos y links */
+  --verde:#a2c301;  /* Colabora */
   --max:1200px;
   --negro:#222;
   --gris:#666;
@@ -34,22 +33,51 @@ nav a:hover, nav a.active{opacity:1;text-decoration:underline;text-underline-off
   #menu-toggle{display:block}
 }
 
-/* Hero */
+/* HERO – Imagen a pantalla completa con recorte controlado */
 .hero{position:relative;isolation:isolate;background:#000}
-.hero picture,.hero img{width:100%;height:78vh;object-fit:contain;object-position:center} /* ver puente + oasis en grandes */
-@media (min-width:1400px){.hero picture,.hero img{height:72vh}}
-@media (max-width:991px){.hero picture,.hero img{height:64vh;object-fit:cover;object-position:center 22%}}
-@media (max-width:575px){.hero picture,.hero img{height:58vh;object-fit:cover;object-position:center 22%}}
-
-.hero-slogan{position:absolute;inset:4% auto auto 4%;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.55);z-index:1;max-width:min(90%,560px)}
-.hero-slogan h1{margin:0 0 10px;font-size:clamp(22px,4.8vw,40px);line-height:1.15}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
-/* Sombra extra en móvil para legibilidad sobre arena */
+.hero picture,.hero img{width:100%;height:100vh;object-fit:cover;object-position:center 60%}
+/* Explicación:
+   - object-fit: cover → ocupa todo el viewport sin bandas
+   - object-position: center 60% → desplaza el foco hacia abajo para ver arena y oasis
+   Ajustes por breakpoints para equilibrar puente+desierto+oasis */
+@media (min-width:1200px){
+  .hero picture,.hero img{object-position:center 52%} /* más puente en escritorio grande */
+}
+@media (max-width:991px){
+  .hero picture,.hero img{height:78vh;object-position:center 64%} /* más arena en tablet */
+}
 @media (max-width:575px){
-  .hero-slogan{background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0));padding:10px;border-radius:8px}
+  .hero picture,.hero img{height:70vh;object-position:center 68%} /* asegura arena + parte del oasis en móvil */
 }
 
-/* Buttons */
+/* Slogan sobre arena (inferior izquierda), nunca tapa el puente */
+.hero-slogan{
+  position:absolute;
+  left:4%;
+  bottom:10%;
+  z-index:1;
+  color:#fff;
+  text-shadow:0 3px 14px rgba(0,0,0,.55);
+  max-width:min(92%,640px);
+}
+.hero-slogan h1{
+  margin:0 0 10px;
+  font-size:clamp(22px,4.6vw,44px);
+  line-height:1.15;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+/* En móviles, refuerzo de legibilidad sin tapar la foto:
+   solo un suave degradado transparente detrás del texto */
+@media (max-width:575px){
+  .hero-slogan{
+    background:linear-gradient(90deg, rgba(0,0,0,.28), rgba(0,0,0,0));
+    padding:10px 12px;
+    border-radius:8px;
+  }
+}
+
+/* Botones */
 .btn{display:inline-block;padding:10px 16px;border-radius:8px;font-weight:700;border:2px solid transparent;cursor:pointer}
 .btn-alt{background:var(--verde);border-color:var(--verde);color:#fff} /* Haz tu aportación */
 .btn-alt:hover{filter:brightness(.95);color:#fff;text-decoration:none}
@@ -58,7 +86,7 @@ nav a:hover, nav a.active{opacity:1;text-decoration:underline;text-underline-off
 .btn-white{background:#fff;border:2px solid var(--cereza);color:var(--cereza)} /* Conoce más */
 .btn-white:hover{background:var(--cereza);color:#fff}
 
-/* Sections */
+/* Secciones */
 .section{max-width:var(--max);margin:40px auto;padding:0 16px}
 .section h2{margin:0 0 12px;color:var(--cereza);font-size:clamp(22px,4vw,28px)}
 .section p.lead{margin-top:2px;color:var(--gris)}
@@ -82,24 +110,11 @@ nav a:hover, nav a.active{opacity:1;text-decoration:underline;text-underline-off
 .card p{margin:0 0 12px;color:#555}
 @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
 
-/* Forms */
-.form{display:grid;gap:12px}
-.input,.select,.textarea{width:100%;padding:12px 14px;border:1px solid #dcdce6;border-radius:10px;font:inherit}
-.textarea{min-height:120px;resize:vertical}
-.submit{background:var(--cereza);color:#fff;border:0;padding:12px 18px;border-radius:10px;font-weight:700;cursor:pointer}
-.submit:hover{filter:brightness(.95)}
-
-/* Mosaics */
-.mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.mosaic .box{background:#eee;border:2px dashed #ccc;border-radius:12px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#6b7280;font-weight:600}
-@media (max-width:767px){.mosaic{grid-template-columns:1fr 1fr}}
-
 /* Partners */
 .partners{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:10px}
-.partners img{height:38px;width:auto;opacity:.9;transition:transform .2s,opacity .2s}
+.partners img{height:42px;width:auto;opacity:.9;transition:transform .2s,opacity .2s}
 .partners a:hover img{transform:scale(1.05);opacity:1}
 .partners.column{flex-direction:column;align-items:center;gap:14px}
-.partners.column img{height:42px}
 
 /* Contrib */
 .contrib{max-width:var(--max);margin:40px auto;padding:0 16px}
