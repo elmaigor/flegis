@@ -133,3 +133,114 @@ footer{background:#fafafa;border-top:1px solid #eee;margin-top:40px}
 .modal-content{position:relative;max-width:min(900px,95vw);max-height:90vh}
 .modal-content img{width:100%;height:auto;max-height:90vh;border-radius:10px}
 .modal-close{position:absolute;top:-10px;right:-10px;background:#fff;border:0;border-radius:999px;width:36px;height:36px;font-size:22px;cursor:pointer;line-height:36px}
+/* ====== REFUERZO DE ESTILOS PARA FORMULARIOS, MOSAICOS Y TESTIMONIOS ====== */
+
+/* Formulario bonito y centrado */
+.form{
+  display:grid;
+  gap:12px;
+  max-width:720px;
+  margin: 0 auto;           /* centra el formulario */
+}
+.input,.select,.textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #dcdce6;
+  border-radius:10px;
+  font:inherit;
+  background:#fff;
+}
+.textarea{min-height:120px;resize:vertical}
+.submit{
+  background:var(--cereza);
+  color:#fff;
+  border:0;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+.submit:hover{filter:brightness(.95)}
+
+/* Mosaico de fotos/vídeos (Nuestra labor en imágenes) */
+.mosaic{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+}
+@media (max-width:900px){
+  .mosaic{grid-template-columns: repeat(2, 1fr)}
+}
+@media (max-width:575px){
+  .mosaic{grid-template-columns: 1fr}
+}
+.media-card{
+  position:relative;
+  background:#f0f2f5;
+  border:1px solid var(--borde);
+  border-radius:12px;
+  overflow:hidden;
+  aspect-ratio:16/9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.media-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.media-card.video .media-inner{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#6b7280;
+  font-weight:700;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35) 0 40%, transparent 41%),
+    linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
+}
+
+/* Voces que inspiran (testimonios) */
+.stories{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+}
+@media (max-width:900px){
+  .stories{grid-template-columns: 1fr 1fr}
+}
+@media (max-width:575px){
+  .stories{grid-template-columns: 1fr}
+}
+.story{
+  background:#fff;
+  border:1px solid var(--borde);
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+.story blockquote{
+  margin:0 0 10px;
+  color:#444;
+  font-style:italic;
+}
+.story .author{
+  margin:0;
+  color:#777;
+  font-weight:600;
+  font-size:.95rem;
+}
+
+/* Ajuste de botones blancos rosa para visibilidad siempre */
+.btn-white{
+  background:#fff;
+  border:2px solid var(--cereza);
+  color:var(--cereza);
+}
+.btn-white:hover{
+  background:var(--cereza);
+  color:#fff;
+}
